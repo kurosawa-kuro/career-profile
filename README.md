@@ -61,7 +61,6 @@
 ## 🗣 Public Activities
 - **GitHub** : OSS Operator / Exporter を公開中  
 - **Qiita** : 技術記事 100 本超、Udemy インタビュー掲載  
-- 登壇 : K8s LT@札幌、Hyperledger 勉強会 ほか
 
 ---
 
