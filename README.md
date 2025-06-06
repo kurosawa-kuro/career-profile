@@ -10,7 +10,7 @@
 ## 💡 Summary
 クラウド & データ基盤・ブロックチェーン・MLOps を横断できる **フルスタック / プラットフォームエンジニア**。  
 - **10+ yrs** : 設計〜運用・自動化までを一人称で完遂  
-- **専門** : Kubernetes / Snowflake & Redshift / Hyperledger Fabric / IaC / Next.js / Spring Boot  
+- **専門** : Kubernetes / Snowflake & Redshift / Hyperledger Fabric / IaC / Next.js / Spring Boot / Express / PostgreSQL
 - **現在** : CKAD・CKA・SnowPro Advanced（DE & ML）・Terraform Associate 取得準備中
 
 ---
