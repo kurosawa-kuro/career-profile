@@ -48,7 +48,7 @@
 | 期間 | 役割 / 所属 | 概要 & 成果 | 主要技術 |
 |------|-------------|-------------|----------|
 | **2025-04 – 現在** | フリーランス | 大手 SIer・某省庁向け **ブロックチェーン トレーサビリティシステム PoC** を担当 | TypeScript / Next.js / Java (Spring Boot) / AWS / Terraform / Kubernetes / EKS / ActiveMQ |
-| **2025-01 – 03** | 個人開発 | データドリブン EC サービスを **Fargate → EKS** へ PoC。<br>CloudWatch → Firehose → Glue → Athena → QuickSight パイプラインを構築、Snowflake 移行を検証 | TypeScript / Next.js / Go / Rust / AWS CDK / Terraform / Snowflake |
+| **2025-01 – 03** | 個人開発 | データドリブン EC サービスをPoC。<br>CloudWatch → Firehose → Glue → Athena → QuickSight パイプラインを構築、Snowflake 移行を検証 | TypeScript / Next.js / Go / Rust / AWS CDK / Terraform / Snowflake |
 | **2023-05 – 2024-12** | **Wamazing**（正社員）<br>バックエンド  | Next.js + Rails・Nest.js の複数案件を 1 人でフルスタック。状態管理リファクタリング  | TypeScript / Ruby on Rails / Nest.js / AWS / Heroku |
 | **2023-02 – 2023-04** | フリーランス | メタバース系ブロックチェーンゲーム企業でインフラ & DevOps 移行。<br>VPC / EC2 / FastAPI 環境を **Jenkins + Ansible** で自動化 | Python / FastAPI / Jenkins / AWS |
 | **2021-07 – 2022-10** | リモート会議アプリ（受託） | React + Express マイクロサービス /  MySQL。予約機能・古データ自動削除を実装し **月間障害ゼロ** を達成 | TypeScript / React / MySQL / Azure |
@@ -58,8 +58,7 @@
 
 ---
 
-## 🗣 Public Activities
-- **GitHub** : OSS Operator / Exporter を公開中  
+## 🗣 Public Activities  
 - **Qiita** : 技術記事 100 本超、Udemy インタビュー掲載  
 
 ---
