@@ -54,7 +54,7 @@
 | **2021-07 – 2022-10** | リモート会議アプリ（受託） | React + Express マイクロサービス / Azure MySQL。予約機能・古データ自動削除を実装し **月間障害ゼロ** を達成 | TypeScript / React / MySQL / Azure |
 | **2018-07 – 2020-12** | ブロックチェーン企業（正社員） | ハイブリッド暗号資産ウォレットをテックリード。Solidity + Scala + iOS/Android 連携 | Solidity / Scala / Swift / AWS |
 | **2016-11 – 2018-06** | **JapanTaxi** | iOS アプリの MVVM 化 & 社内統合管理システムを開発 | Swift / Ruby on Rails / Azure |
-| … | *(詳細は `docs/projects/` 参照)* | | |
+
 
 ---
 
