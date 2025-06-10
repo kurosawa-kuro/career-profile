@@ -1,3 +1,60 @@
+| ブロック / 優先       | 資格                                 | 取得ターゲット         | 主なアウトカム                             | 補足                      |
+| --------------- | ---------------------------------- | --------------- | ----------------------------------- | ----------------------- |
+| **Core-K8s**    | **CKAD** → **CKA** → **CKS**       | 2025 5-11 月     | “開発 → 運用 → セキュリティ” を連続習得            | CKAD 直後に CKA、年内に CKS    |
+| **Core-Snow**   | **SnowPro Core** → **Advanced DE** | 2025 7 月 → 10 月 | DWH 基礎バッジ → パイプライン専門バッジ             | Core が土台、DE が即実務提案に直結   |
+| **Supporting**  | **Terraform Associate**            | 2025 8 月        | IaC スキルを資格で裏付け                      | CK 系クラスタ管理の自動化にも活用      |
+| **拡張 (必要に応じて)** | **Advanced Architect**             | 2025 12 月       | マルチクラウド設計・コスト最適化                    | Terraform & セキュリティ学習と相乗 |
+|                 | **Advanced ML**                    | 2026 Q2         | Snowpark／Feature Store など ML 機能を深掘り | MLOps が落ち着いた段階で         |
+|                 | **HFCP (Fabric)**                  | 2026 以降         | Fabric 構築経験を公式ラベル化                  | ブロックチェーン再開時に取得          |
+|                 | **Istio CA / CBDE / AWS SAA**      | 状況を見て           | Mesh、EVM、AWS 設計の補助資格                | あくまで「Nice-to-have」      |
+
+
+---
+
+## 全体ロードマップ（抜粋）
+
+| 時期          | ブロック                       | ゴール                  |
+| ----------- | -------------------------- | -------------------- |
+| **2025-07** | SnowPro **Core**           | DWH 基礎バッジ            |
+| **2025-10** | Advanced **Data Engineer** | Streaming & Task 実務力 |
+| **2025-12** | Advanced **Architect**     | ネットワーク／Sharing 設計力   |
+| **2026-Q2** | Advanced **ML**            | Snowpark + MLOps 最適化 |
+
+（並行で CK 系 – CKAD/CKA/CKS と Terraform・Security Specialty を回す）
+
+---
+
+### 取捨の目安
+
+| 資格                     | いつ取るとコスパ高？                                         | スキップしても困らないケース                             |
+| ---------------------- | -------------------------------------------------- | ------------------------------------------ |
+| **Advanced DE**        | ETL / dbt / Stream を提案・実装する立場                      | Snowflake を BI 専用 DWH として使うだけ              |
+| **Advanced Architect** | **クロスアカウント共有**・**Org レベル設計** が仕事の範囲にある             | 単一アカ運用 & ネット要件が軽い案件                        |
+| **Advanced ML**        | Snowpark/Python UDF で ML パイプラインを Snowflake 内完結させたい | モデル推論は KServe/ONNX で済ませ、Snowflake はデータ供給のみ |
+
+---
+
+### 結論
+
+* Core → **DE** は “データパイプライン担当” のあなたに **確実に ROI が高い**。
+* **Architect** は Terraform／Security 周辺学習とシナジー大、次点でおすすめ。
+* **ML** は KServe / SageMaker と棲み分けながら取り組む **発展枠**。
+
+この順序で進めれば **Snowflake × Kubernetes × GitOps** を軸にした “データ → パイプライン → セキュリティ & ネットワーク → ML” の一気通貫スキルマップが完成します。
+
+
+> **ポイントまとめ**
+>
+> 1. **CK シリーズ(AD→A→S)** で Kubernetes は “開発→運用→安全” を一気に網羅。
+> 2. **Snowflake Core → Advanced DE** で DWH 側の専門性を段階的に厚く。
+> 3. **PoC (EKS×HLF×DWH)** を CK／Snow 系の間に挟み、学んだ内容を即アウトプット。
+> 4. Terraform は PoC の直前取得がもっとも効果的。
+> 5. Blockchain・Mesh・AWS など **周辺領域は後ろへ寄せて** 集中力を確保。
+
+この順序なら **2025 年中に CK 系 + Snow 系 + 実演 PoC** まで無理なく到達でき、
+2026 年は追加資格（HFCP／Istio など）を “必要に応じて” 積み上げるスタイルが取れます。
+
+
 了解です。  
 あなたの現在のスキルスタック（Kubernetes, EKS, GitOps, Terraform, Fabric, Snowflake, DWH, ML, Go）に直接関わる資格を以下に難易度順で整理しました（主観的難易度＋学習時間ベース）。  
 特に「**再現性と設計力が問われるかどうか**」を基準にしています。
@@ -149,3 +206,51 @@ Let's craft final table again.
 
 この順序なら **2025 年内に k8s 運用 → ブロックチェーン／DWH 連携 → GitOps/セキュリティ強化 → 企業向け総合デモ** まで到達できます。  
 さらなる微調整や個別学習リソースのご相談があればお知らせください！
+
+
+了解です。「Snowflake 側の専門性とかぶり — ＝ “DWH／ETL 系の深掘り” — には踏み込まず、 それ以外でスタック全体を底上げできる AWS 資格」に絞って再整理しました。
+
+| 優先    | 資格名（試験コード ※2025-06 時点）                          | 何が強くなるか                              | スタックとの直接リンク                           | 学習ボリューム感       |
+| ----- | ----------------------------------------------- | ------------------------------------ | ------------------------------------- | -------------- |
+| **①** | **Solutions Architect – Associate (SAA-C03)**   | EKS＋VPC／ALB／IAM の設計全般                | インフラ基盤全レイヤ                            | ★★★☆☆（40-60 h） |
+| **②** | **DevOps Engineer – Professional (DOP-C02)**    | Terraform & GitOps／CI → EKS デプロイ運用   | Argo CD／Jenkins／GitHub Actions ワークフロー | ★★★★☆（60-80 h） |
+| **③** | **Security – Specialty (SCS-C02)**              | IAM ポリシー最小化・IRSA／KMS 暗号化             | CKS で学ぶ PodSecurity＋AWS 側制御を補完        | ★★★★☆（50-70 h） |
+| **④** | **Advanced Networking – Specialty (ANS-C01)**   | マルチ VPC／EKS 間通信・Service Mesh 入りネット設計 | EKS×Istio／Linkerd＋Transit Gateway     | ★★★★☆（70-90 h） |
+| **⑤** | **Machine Learning – Specialty (MLS-C02)**〈※任意〉 | SageMaker Pipelines➡KServe 比較検証      | ONNX 推論とサービス統合を AWS 側で証明              | ★★★★☆（60-80 h） |
+
+### なぜ DEA-C01（Data Engineer Assoc）を外したか
+
+* Redshift/Glue/Kinesis を深掘りする＝Snowflake とドメインが丸かぶり
+  → Snowflake Pro Core で既に評価される領域と重複し、ROI が下がるため。
+
+### この並びのメリット
+
+1. **基盤設計 → 運用自動化 → セキュリティ → 高可用ネット** と段階的にパワーアップ
+2. Snowflake 周辺は **既存 SnowPro 資格 & 実務** で差別化し、AWS 側は “インフラ＋SecOps” に集中
+3. 月単価／年俸アップに直結しやすいスクリーニング順
+   *SAA ⇒ DevOpsPro で 100 万/月帯、Security／Networking を載せて 120 万+ 帯へ*
+
+---
+
+## 具体的ロードマップ（例）
+
+| 期           | ゴール                         | 実施メモ                            |
+| ----------- | --------------------------- | ------------------------------- |
+| **2025 Q3** | SAA-C03 合格                  | 既習 k8s ネット／IAM とリンクして覚える        |
+| **2025 Q4** | DevOps Pro 取得               | Terraform + ArgoCD 既存リポを使い実機演習  |
+| **2026 Q1** | Security Spec 取得            | KMS, GuardDuty, IRSA を Labs で再現 |
+| **2026 Q2** | Advanced Networking Spec 取得 | EKS マルチ AZ × TGW × Service Mesh |
+| **以降**      | ML Spec (任意)                | SageMaker vs KServe ベンチ兼ねて勉強    |
+
+---
+
+### 学習リソース・Tips
+
+* **Stephane Maarek / Tutorial Dojo 模試** ⇒ SAA & DOP-C02 に最短
+* **AWS Workshop Studio** で Security Workshop → KMS、GuardDuty、IAM Access Analyzer を実機
+* ネットワーク系は **AWS Immersion Day – Networking** ハンズオンが無料公開
+
+---
+
+これで **Snowflake 領域とはバッティングせず**、 黒澤さんの EKS＋GitOps＋SecOps 価値を最大化する AWS 資格ルートになります。
+他に「この分野も深めたい」「逆に削りたい」などあれば遠慮なくどうぞ！
