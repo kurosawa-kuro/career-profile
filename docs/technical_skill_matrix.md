@@ -186,21 +186,59 @@
 
 ## 3. スキルシナジーマップ
 
+### 3.1 アーキテクチャ概要図
+
 ```
-                +-------------+         学習済み
+                +-------------+         
                 |  Snowflake  |◀─────────┐
                 +------+------┘          │  ELT / CI/CD
                        ▲                 │
                        │ dbt             ▼
   +---------+     +----+----+      +-----------+
   |  k8s    |────▶|  IaC    |─────▶| MLOps     |
-  +---------+     +---------+      +-----------+
-   ▲  (CKA)        (Terraform)       (Databricks / MLflow)
-   │
-   │ optional
-   ▼
-  CKS (任意)
+  +----▲----+     +---------+      +-----------+
+       │ (CKAD)          (Terraform)   │
+       │                                 │
+optional│                                 │
+       ▼                                 ▼
+     (CKA)                      (Databricks / MLflow)
+       │
+       ▼
+     (CKS 任意)
 ```
+
+### 3.2 技術領域と資格の関連性
+
+| 技術領域 | 主要技術 | 関連資格 | 重要度 | 説明 |
+|----------|----------|----------|--------|------|
+| **Kubernetes** | EKS/kind | CKAD (中心) | 最高 | アプリケーション開発が中心 |
+| **Kubernetes** | EKS/kind | CKA (オプション) | 高 | クラスター管理 |
+| **Kubernetes** | EKS/kind | CKS (任意) | 中 | セキュリティ専門 |
+| **ELT / CI/CD** | dbt | dbt Certified Analytics Engineer | 高 | データ変換・分析 |
+| **MLOps** | MLflow | Databricks Certified Data Engineer Associate | 高 | データエンジニアリング |
+| **IaC** | Terraform | Terraform Associate | 高 | インフラコード化 |
+
+### 3.3 学習戦略の優先順位
+
+#### 3.3.1 最優先（必須）
+- **CKAD**: Kubernetesアプリケーション開発の基礎
+- **dbt Certified Analytics Engineer**: データ変換・分析の標準化
+
+#### 3.3.2 高優先（推奨）
+- **CKA**: Kubernetesクラスター管理
+- **Terraform Associate**: インフラのコード化
+- **Databricks Certified Data Engineer Associate**: データエンジニアリング
+
+#### 3.3.3 中優先（オプション）
+- **CKS**: Kubernetesセキュリティ
+- **AWS SAA**: クラウド設計の基礎
+
+### 3.4 技術スタックの相乗効果
+
+1. **Kubernetes + dbt**: コンテナ化されたデータパイプライン
+2. **Terraform + Argo CD**: フルGitOps環境
+3. **MLflow + Databricks**: 統合MLOpsプラットフォーム
+4. **Snowflake + dbt**: モダンデータスタック
 
 ## 4. 競合優位性分析
 
@@ -257,19 +295,22 @@
 - [ ] Terraform Associate
 
 ### 5.2 学習中・計画中
+- [ ] dbt Certified Analytics Engineer
+- [ ] Databricks Certified Data Engineer Associate
 - [ ] SnowPro Core (Snowflake)
-- [ ] HFCP (HashiCorp Foundational Certification)
 
 ### 5.3 資格と技術スタックの関連性
 
 | 資格 | 関連技術 | スキルレベル | 取得予定 | 重要性 |
 |------|----------|--------------|----------|--------|
-| **CKAD** | Kubernetes | Expert | 2024年 | アプリケーション開発 |
-| **CKA** | Kubernetes | Expert | 2024年 | クラスター管理 |
-| **CKS** | Kubernetes Security | Advanced | 2024年 | セキュリティ |
+| **CKAD** | Kubernetes | Expert | 2024年 | アプリケーション開発（中心） |
+| **CKA** | Kubernetes | Expert | 2024年 | クラスター管理（オプション） |
+| **CKS** | Kubernetes Security | Advanced | 2024年 | セキュリティ（任意） |
 | **AWS SAA** | AWS Services | Advanced | 2024年 | クラウド設計 |
 | **Terraform Associate** | Terraform | Advanced | 2024年 | インフラコード化 |
-| **SnowPro Core** | Snowflake | Advanced | 2025年 | データエンジニアリング |
+| **dbt Certified Analytics Engineer** | dbt | Advanced | 2025年 | データ変換・分析 |
+| **Databricks Certified Data Engineer Associate** | MLflow | Advanced | 2025年 | データエンジニアリング |
+| **SnowPro Core** | Snowflake | Advanced | 2025年 | データウェアハウス |
 
 ### 5.4 資格取得戦略
 
@@ -279,12 +320,12 @@
 3. **Terraform Associate**: IaCの標準化
 
 #### 中期目標（6-12ヶ月）
-1. **SnowPro Core**: データエンジニアリングの専門性向上
-2. **HFCP**: HashiCorpエコシステムの理解
+1. **dbt Certified Analytics Engineer**: データ変換・分析の専門性向上
+2. **Databricks Certified Data Engineer Associate**: MLOpsプラットフォーム習得
 
 #### 長期目標（1-2年）
-1. **AWS Professional**: 高度なクラウド設計
-2. **Kubernetes Security**: セキュリティ専門性
+1. **SnowPro Core**: データウェアハウスの専門性
+2. **AWS Professional**: 高度なクラウド設計
 
 ---
 
