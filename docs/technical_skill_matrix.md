@@ -113,7 +113,7 @@ Kubernetes-native MLOps
 | データ基盤 (Snowflake/Redshift + dbt)               | DWH ＆モデリングを *コード化* して CICD に組み込み ⇒ スキーマ変更が安全。DuckDB でローカル検証の高速フィードバック。      | “データマート不足” の課題を即解決。データチームとアプリチームの分断を解消。     |
 | イベント駆動 MS × Spring Boot / Kafka                | Java の成熟エコシステム + Kafka による 高スループット。SRP・DDD 実装で保守容易。                     | 典型的な銀行・物流・製造など高並行性/高信頼性ドメインにフィット。           |
 | Go (Gin) & TypeScript (Express/Nest)           | 軽量 Go と DX 高い TS を適材適所で使い分け。マルチランタイムを同一 k8s クラスタで運用。                        | クラウドコスト最適化 (Go) と MVP スピード (TS) の両立。        |
-| ML / MLOps                                     | ONNX 変換・Go サービングにより 超軽量推論。Airflow + Argo WF で *データ～モデル～アプリ* のパイプラインを統合。 | 「モデルは動くが運用が…」を解消。ML プロジェクトの PoC 止まりを防止。     |
+| ML / MLOps / Kubernetes-native MLOps                                    | ONNX 変換・Go サービングにより 超軽量推論。Airflow + Argo WF で *データ～モデル～アプリ* のパイプラインを統合。 | 「モデルは動くが運用が…」を解消。ML プロジェクトの PoC 止まりを防止。     |
 | セキュリティ (IRSA / KMS / OIDC)                     | Pod 単位の最小権限・鍵管理。Terraform でポリシー自動生成。                                        | 内部監査・コンプライアンス対応が楽。ゼロトラスト移行に好適。              |
 
 ---
