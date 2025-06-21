@@ -83,7 +83,7 @@
 | カテゴリ                    | ツール / サービス                                                            |
 | ----------------------- | --------------------------------------------------------------------- |
 | パイプライン Orchestrator | Airflow / Argo Workflows                                          |
-| モデル管理               | MLflow (*検証*) / ONNX Registry (S3 or MinIO)                           |
+| モデル管理               | MLflow (*検証*) / kubeflow / ONNX Registry (S3 or MinIO)                           |
 | サービング               | KServe / TensorFlow Serving / FastAPI (Go 組込 ONNX)                    |
 | オーケストレーション          | Kubernetes (EKS / kind) + GitOps (Argo CD)                            |
 | 監視・メトリクス            | Prometheus + Grafana (モデルメトリクス) / Loki (ログ) / Tempo (トレース)            |
