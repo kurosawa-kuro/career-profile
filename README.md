@@ -17,20 +17,24 @@
 
 ## 🛠 Tech Stack
 
-| 分野                           | 主要ツール・サービス                                                                                                    |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **K8s / GitOps**             | EKS・kind・kubeadm・Helm・Kustomize・Argo CD・Operator SDK                                                          |
-| **Cloud / IaC**              | AWS（EC2・S3・EKS・ECS・Fargate・IAM・CloudFront・ALB・Lambda・CodePipeline・CodeBuild）・Terraform・CloudFormation・Ansible |
-| **Database / CNPG**          | CloudNativePG・PostgreSQL・MySQL・Redis                                                                          |
-| **Observability / Security** | Prometheus・Grafana・Loki・Tempo・OPA・Kyverno                                                                     |
-| **Compute / GPU**            | Kubernetes GPU Scheduling・NVIDIA Device Plugin・TensorRT・ONNX Runtime                                          |
-| **Data Platform**            | Snowflake・Redshift・Glue・Athena・dbt・Airflow                                                                    |
-| **MLOps**                    | MLflow・Kubeflow・KServe                                                                                        |
-| **Blockchain**               | Hyperledger Fabric・Solidity                                                                                   |
-| **Back-end**                 | Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）                                               |
-| **Front-end**                | TypeScript(Next.js・React・Nuxt)・MSW・Tailwind CSS                                                                               |
-| **Test / CI**                | Jest・Playwright・GitHub Actions                                                                                |
-| **Others**                   | Docker・Makefile・Linux・GitHub・Bitbucket                                                                        |
+
+
+| 分野                          | 主要ツール・サービス                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Container Orchestration** | EKS・kind・kubeadm・Helm・Kustomize・Argo CD・Operator SDK                                                          |
+| **Cloud Infrastructure**    | AWS（EC2・S3・EKS・ECS・Fargate・IAM・CloudFront・ALB・Lambda・CodePipeline・CodeBuild）・Terraform・CloudFormation・Ansible |
+| **Database**                | CloudNativePG・PostgreSQL・MySQL・Redis                                                                          |
+| **Monitoring & Security**   | Prometheus・Grafana・Loki・Tempo・OPA・Kyverno                                                                     |
+| **GPU Computing**           | Kubernetes GPU Scheduling・NVIDIA Device Plugin・TensorRT・ONNX Runtime                                          |
+| **Data Engineering**        | Snowflake・Redshift・Glue・Athena・dbt・Airflow                                                                    |
+| **ML Infrastructure**       | MLflow・Kubeflow・KServe                                                                                        |
+| **Blockchain**              | Hyperledger Fabric・Solidity                                                                                   |
+| **Backend Development**     | Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）                                               |
+| **Frontend Development**    | TypeScript(Next.js・React・Nuxt)・MSW・Tailwind CSS                                                               |
+| **Testing & CI/CD**         | TestContainers・Jest・Playwright・GitHub Actions                                                                 |
+| **Development Tools**       | Docker・Makefile・Linux・GitHub・Bitbucket                                                                        |
+
+
 
 
 ---
