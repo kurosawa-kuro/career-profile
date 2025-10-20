@@ -20,20 +20,24 @@
 
 
 
+
+市場価値の高い順（左→右）に並べ替えました：
+
 |分野|主要ツール・サービス|
 |---|---|
-|**Container Orchestration**|EKS・kind・kubeadm・Helm・Kustomize・Argo CD・Operator SDK・git-sync|
-|**Cloud Infrastructure**|AWS（EC2・S3・EKS・ECS・Cognito・Fargate・IAM・CloudFront・ALB・Lambda・CodePipeline・CodeBuild）・Terraform・CloudFormation・Ansible|
-|**Database**|CloudNativePG・PostgreSQL・MySQL・Redis|
+|**Container Orchestration**|EKS・Helm・Argo CD・Kustomize・Operator SDK・kubeadm・kind・git-sync|
+|**Cloud Infrastructure**|AWS（EKS・Lambda・ECS・Fargate・IAM・S3・EC2・CloudFront・ALB・Cognito・CodePipeline・CodeBuild）・Terraform・Ansible・CloudFormation|
+|**Database**|PostgreSQL・MySQL・Redis・CloudNativePG|
 |**Monitoring & Security**|Prometheus・Grafana・Loki・Tempo|
-|**GPU Computing**|Kubernetes GPU Scheduling・NVIDIA Device Plugin・TensorRT・ONNX Runtime|
-|**Data Engineering**|Snowflake・Redshift・Glue・Athena・dbt・Airflow|
+|**GPU Computing**|NVIDIA Device Plugin・TensorRT・Kubernetes GPU Scheduling・ONNX Runtime|
+|**Data Engineering**|Snowflake・Airflow・dbt・Redshift・Athena・Glue|
 |**ML Infrastructure**|MLflow・Kubeflow・KServe|
-|**Blockchain**|Hyperledger Fabric・Solidity|
+|**Blockchain**|Solidity・Hyperledger Fabric|
 |**Backend Development**|Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）|
-|**Frontend Development**|TypeScript(Next.js・React・Nuxt)・MSW・Tailwind CSS|
-|**Testing & CI/CD**|TestContainers・Jest・Playwright・GitHub Actions|
-|**Development Tools**|Docker・Makefile・Linux・GitHub・Bitbucket・GitLab|
+|**Frontend Development**|TypeScript（React・Next.js・Nuxt）・Tailwind CSS・MSW|
+|**Testing & CI/CD**|GitHub Actions・Playwright・Jest・TestContainers・LocalStack|
+|**Development Tools**|Docker・GitHub・Ubuntu・GitLab・Makefile|
+
 
 
 
