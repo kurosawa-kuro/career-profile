@@ -17,19 +17,21 @@
 
 ## 🛠 Tech Stack
 
-| 分野 | 主要ツール・サービス |
-|------|--------------------|
-| **K8s / GitOps** | EKS・kind・kubeadm・Helm・Kustomize・Argo CD・Operator SDK |
-| **Cloud / IaC** | AWS（EC2 / S3 / EKS / Fargate …）・Terraform・CDK・Ansible |
-| **Data Platform** | Snowflake・Redshift・Glue・Athena・dbt・Airflow |
-| **Observability** | Prometheus・Grafana・Loki・Tempo |
-| **Blockchain** | Hyperledger Fabric・Solidity |
-| **Back-end** | Go（Gin）・TypeScript（Express / Nest.js）・Java（Spring Boot） |
-| **Front-end** | Next.js・React・Tailwind CSS |
-| **ML / DS** | Python・scikit-learn・TensorFlow・ONNX Runtime |
-| **MLops** | MLflow・Kubeflow・Kserve |
-| **Test / CI** | Jest・Playwright・GitHub Actions |
-| **DB** | PostgreSQL・MySQL・Redis |
+| 分野                           | 主要ツール・サービス                                                                                                    |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **K8s / GitOps**             | EKS・kind・kubeadm・Helm・Kustomize・Argo CD・Operator SDK                                                          |
+| **Cloud / IaC**              | AWS（EC2・S3・EKS・ECS・Fargate・IAM・CloudFront・ALB・Lambda・CodePipeline・CodeBuild）・Terraform・CloudFormation・Ansible |
+| **Database / CNPG**          | CloudNativePG・PostgreSQL・MySQL・Redis                                                                          |
+| **Observability / Security** | Prometheus・Grafana・Loki・Tempo・OPA・Kyverno                                                                     |
+| **Compute / GPU**            | Kubernetes GPU Scheduling・NVIDIA Device Plugin・TensorRT・ONNX Runtime                                          |
+| **Data Platform**            | Snowflake・Redshift・Glue・Athena・dbt・Airflow                                                                    |
+| **MLOps**                    | MLflow・Kubeflow・KServe                                                                                        |
+| **Blockchain**               | Hyperledger Fabric・Solidity                                                                                   |
+| **Back-end**                 | Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）                                               |
+| **Front-end**                | TypeScript(Next.js・React・Nuxt)・MSW・Tailwind CSS                                                                               |
+| **Test / CI**                | Jest・Playwright・GitHub Actions                                                                                |
+| **Others**                   | Docker・Makefile・Linux・GitHub・Bitbucket                                                                        |
+
 
 ---
 
