@@ -18,11 +18,6 @@
 ## 🛠 Tech Stack
 
 
-
-
-
-市場価値の高い順（左→右）に並べ替えました：
-
 |分野|主要ツール・サービス|
 |---|---|
 |**Container Orchestration**|EKS・Helm・Argo CD・Kustomize・Operator SDK・kubeadm・kind・git-sync|
@@ -31,12 +26,15 @@
 |**Monitoring & Security**|Prometheus・Grafana・Loki・Tempo|
 |**GPU Computing**|NVIDIA Device Plugin・TensorRT・Kubernetes GPU Scheduling・ONNX Runtime|
 |**Data Engineering**|Snowflake・Airflow・dbt・Redshift・Athena・Glue|
-|**ML Infrastructure**|MLflow・Kubeflow・KServe|
+|**ML Infrastructure**|PyTorch・TensorFlow・scikit-learn・MLflow・Kubeflow・KServe|
 |**Blockchain**|Solidity・Hyperledger Fabric|
 |**Backend Development**|Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）|
 |**Frontend Development**|TypeScript（React・Next.js・Nuxt）・Tailwind CSS・MSW|
 |**Testing & CI/CD**|GitHub Actions・Playwright・Jest・TestContainers・LocalStack|
 |**Development Tools**|Docker・GitHub・Ubuntu・GitLab・Makefile|
+
+
+
 
 
 
