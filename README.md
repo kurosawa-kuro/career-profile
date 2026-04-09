@@ -1,7 +1,7 @@
 # 職務経歴書 / Résumé – **黒澤 俊文**
 
 - **生年月日** : 1981-02-02（45 歳）
-- **居住地** : 札幌 ― フルリモート可
+- **居住地** : 札幌 ― フルリモートのみ可
 - **GitHub** : <https://github.com/kurosawa-kuro>
 - **Qiita**  : <https://qiita.com/kurosawa_kuro>
 
