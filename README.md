@@ -45,9 +45,10 @@
 
 | 年 | 資格 |
 |----|------|
-| 2025 | **CKAD / CKA**（学習中） |
-| 2025 | **SnowPro Advanced – Data Engineer / Machine Learning**（学習中） |
-| 2025 | HashiCorp **Terraform Associate**（予定） |
+| 2026 | **GCP Professional Machine Learning Engineer**（学習済） |
+| 2025 | **CKAD / CKA**（学習済） |
+| 2025 | **SnowPro Advanced – Data Engineer / Machine Learning**（学習済） |
+| 2025 | HashiCorp **Terraform Associate**（学習済） |
 | 既取得 | AWS SAA（学習済） / OSS DB Silver（学習済） |
 
 ---
