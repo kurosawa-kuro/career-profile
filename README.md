@@ -15,23 +15,22 @@
 
 ---
 
+
 ## 🛠 Tech Stack
-
-
-|分野|主要ツール・サービス|
+| 分野 | 主要ツール・サービス |
 |---|---|
-|**Container Orchestration**|EKS・Helm・Argo CD・Kustomize・Operator SDK・kubeadm・kind・git-sync|
-|**Cloud Infrastructure**|AWS（EKS・Lambda・ECS・Fargate・IAM・S3・EC2・CloudFront・ALB・Cognito・CodePipeline・CodeBuild）・Terraform・Ansible・CloudFormation|
-|**Database**|PostgreSQL・MySQL・Redis・CloudNativePG|
-|**Monitoring & Security**|Prometheus・Grafana・Loki・Tempo|
-|**GPU Computing**|NVIDIA Device Plugin・TensorRT・Kubernetes GPU Scheduling・ONNX Runtime|
-|**Data Engineering**|Snowflake・Airflow・dbt・Redshift・Athena・Glue|
-|**ML Infrastructure**|PyTorch・TensorFlow・scikit-learn・MLflow・Kubeflow・KServe|
-|**Blockchain**|Solidity・Hyperledger Fabric|
-|**Backend Development**|Go（Gin）・TypeScript（Express・Nest.js）・Java（Spring Boot・Micronaut）|
-|**Frontend Development**|TypeScript（React・Next.js・Nuxt）・Tailwind CSS・MSW|
-|**Testing & CI/CD**|GitHub Actions・Playwright・Jest・TestContainers・LocalStack|
-|**Development Tools**|Docker・GitHub・Ubuntu・GitLab・Makefile|
+| **Container Orchestration** | EKS・Helm・Argo CD・Kustomize・Operator SDK・kubeadm・kind・git-sync |
+| **Cloud Infrastructure** | AWS（EKS・Lambda・ECS・Fargate・IAM・S3・EC2・CloudFront・ALB・Cognito・CodePipeline・CodeBuild）・GCP（Cloud Run・Vertex AI・Artifact Registry・Secret Manager・BigQuery・VPC）・Terraform・Ansible・CloudFormation |
+| **Database** | PostgreSQL・MySQL・Redis・CloudNativePG |
+| **Monitoring & Security** | Prometheus・Grafana・Loki・Tempo・PagerDuty |
+| **GPU Computing** | NVIDIA Device Plugin・TensorRT・Kubernetes GPU Scheduling・ONNX Runtime |
+| **Data Engineering** | Snowflake・Airflow・dbt・Redshift・Athena・Glue |
+| **ML Infrastructure / MLOps** | PyTorch・TensorFlow・scikit-learn・MLflow・Kubeflow・KServe・Vertex AI Pipelines・Great Expectations・W&B |
+| **Blockchain** | Solidity・Hyperledger Fabric |
+| **Backend Development** | Go（Gin）・TypeScript（Express・NestJS）・Java（Spring Boot・Micronaut） |
+| **Frontend Development** | TypeScript（React・Next.js・Nuxt）・Tailwind CSS・MSW |
+| **Testing & CI/CD** | GitHub Actions・Playwright・Jest・TestContainers・LocalStack |
+| **Development Tools** | Docker・GitHub・Ubuntu・GitLab・Makefile |
 
 
 
