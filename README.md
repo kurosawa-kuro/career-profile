@@ -13,7 +13,7 @@
 
 - **10+ yrs** : 要件整理から設計・実装・運用・自動化までを一人称で完遂
 - **核となる強み** : モデルのパフォーマンス向上以外の全レイヤーを一人で一気通貫で組める力。Port/Adapter 分離による技術差し替え容易性と、学習/推論の特徴量一致を静的検知する feature parity テストの設計が得意
-- **直近の取り組み** : 大手製造業向け GCP ベース MLOps パイプライン強化・評価基盤構築をチームリーダーとして推進。並行して BigQuery-first MLOps とハイブリッド検索 + 学習型リランカーの個人検証環境を構築
+- **直近の取り組み** : 大手製造業向け GCP ベース MLOps パイプライン強化・評価基盤構築をチームリーダーとして推進。並行して BigQuery-first MLOps、Vertex AI Feature Store、Elasticsearch ハイブリッド検索 + 学習型リランカーの個人検証環境を構築
 
 ---
 
@@ -21,43 +21,45 @@
 
 案件での意思決定と技術検証を加速させるため、自前の検証環境を整備している。いずれも Port/Adapter 分離により技術要素の差し替えが容易で、評価指標によって「変えて壊れたか」を即座に判定できる。
 
-### bq-first: BigQuery-first MLOps パイプライン (2026)
+### bq-first: BigQuery-first MLOps + Vertex Feature Store パイプライン (2026)
 
-> GCP 上で学習 → サービング → 監視 → 自動再学習まで閉じたループを一人で設計・実装
+> GCP 上で学習 → サービング → 監視 → 自動再学習まで閉じたループを一人で設計・実装。BigQuery / Dataform を offline feature source とし、Vertex AI Feature Store / Feature Group に特徴量を集約することで、学習時特徴量と推論時特徴量の一貫性を担保
 
 **構成**
 
-- BigQuery / Dataform (特徴量マート) → Cloud Run Jobs (training) → GCS artifact → Cloud Run Service (FastAPI serving) → Pub/Sub → BQ Subscription (予測ログ) → Scheduled Query (skew 検知) → Eventarc 経由の自動再学習
+- BigQuery / Dataform (特徴量マート) → Vertex AI Feature Store / Feature Group → Cloud Run Jobs (training) → GCS artifact → Cloud Run Service (FastAPI serving) → Pub/Sub → BQ Subscription (予測ログ) → Scheduled Query (skew 検知) → Eventarc 経由の自動再学習
 
 **技術的ハイライト**
 
 - Terraform を 4 モジュール (`iam` / `data` / `runtime` / `monitoring`) に分割し、全リソースを IaC で管理
 - GitHub Actions と Workload Identity Federation (WIF) による鍵レスデプロイ
 - Port/Adapter 分離により ML ロジックを GCP SDK 非依存に保ち、テスト容易性を担保
-- Feature parity テストで Dataform SQL ↔ Python ↔ schema.py ↔ BigQuery RECORD 型の一致を静的検知
+- BigQuery / Dataform で生成した特徴量を Vertex AI Feature Store / Feature Group に連携し、学習時特徴量と推論時特徴量の一貫性を担保
+- Feature parity テストで Dataform SQL ↔ Python ↔ schema.py ↔ BigQuery RECORD 型 ↔ Feature Store schema の一致を静的検知
 - 全 130 テスト PASS、ローカル smoke test により GCP 無しでもパイプライン全体を検証可能
 
-**主要技術**: GCP (BigQuery, Cloud Run Service/Jobs, Pub/Sub, Eventarc, Cloud Scheduler, Artifact Registry, Secret Manager) / Terraform / Dataform / LightGBM / FastAPI / Pydantic / uv workspace / GitHub Actions
+**主要技術**: GCP (BigQuery, Vertex AI Feature Store, Vertex AI Feature Group, Cloud Run Service/Jobs, Pub/Sub, Eventarc, Cloud Scheduler, Artifact Registry, Secret Manager) / Terraform / Dataform / LightGBM / FastAPI / Pydantic / uv workspace / GitHub Actions
 
 ---
 
-### study-llm-reranking: ハイブリッド検索 + 学習型リランカー (2026)
+### study-llm-reranking: Elasticsearch ハイブリッド検索 + 学習型リランカー (2026)
 
-> Meilisearch による候補検索と multilingual-e5 による意味検索、LightGBM による再ランキングを組み合わせた二段構成の検索基盤
+> Elasticsearch による BM25 / analyzer ベースの候補検索、multilingual-e5 による意味検索、LightGBM LambdaRank による再ランキングを組み合わせた本番寄りの二段構成検索基盤
 
 **構成**
 
-- Meilisearch (BM25 相当の全文検索で候補 100 件取得) → multilingual-e5-large (クエリ埋め込みと物件埋め込みの cosine 類似度) → LightGBM (LambdaRank) による再ランキング
+- Elasticsearch (BM25 / analyzer / synonym による全文検索で候補 100 件取得) → multilingual-e5-large (クエリ埋め込みと物件埋め込みの cosine 類似度) → LightGBM (LambdaRank) による再ランキング
 - feedback ログ (click / favorite / inquiry) から学習データを自動生成 → NDCG@10 / MAP / Recall@20 でオフライン評価 → 閾値判定で自動採用/非採用 → 週次再学習の自動実行
 
 **技術的ハイライト**
 
-- Clean Architecture (inbound/outbound Port + UseCase + Domain) による責務分離。Meilisearch を Elasticsearch に、ME5 を他 embedding モデルに差し替える議論が adapter 一枚の差し替えで完結
+- Clean Architecture (inbound/outbound Port + UseCase + Domain) による責務分離。Elasticsearch / embedding model / reranker を adapter 単位で差し替え可能な構成を設計
+- Elasticsearch の index mapping / analyzer / synonym / scoring を調整し、BM25 候補検索と embedding 類似度、LightGBM LambdaRank の三層で検索品質を改善
 - PostgreSQL 10 テーブル (properties / search_logs / property_features / property_embeddings / ranking_compare_logs / offline_eval_reports / kpi_daily_stats / model_adoption_decisions 等) で、検索〜行動ログ〜評価指標〜採用判定までをデータモデルとして閉じさせた設計
 - Redis キャッシュのフォールバック方針 (障害時に API を落とさない) をテストで担保
 - 日次 (index 同期・特徴量更新・KPI 集計) / 週次 (評価・採用判定・再学習) のバッチを Make ターゲットで整備
 
-**主要技術**: FastAPI / Meilisearch / multilingual-e5-large / LightGBM (LambdaRank) / PostgreSQL / Redis / Docker Compose / pytest
+**主要技術**: FastAPI / Elasticsearch / multilingual-e5-large / LightGBM (LambdaRank) / PostgreSQL / Redis / Docker Compose / pytest
 
 ---
 
@@ -71,8 +73,8 @@
 
 | 分野 | 主要ツール・サービス |
 |---|---|
-| **ML / MLOps** | LightGBM (LambdaRank 含む) / scikit-learn / PyTorch / TensorFlow / MLflow / Kubeflow / KServe / Vertex AI Pipelines / W&B / Great Expectations / multilingual-e5 / ONNX Runtime |
-| **Data Engineering** | BigQuery / Dataform / Snowflake / Redshift / Airflow / dbt / Athena / Glue / Firehose / Elasticsearch / Meilisearch |
+| **ML / MLOps** | LightGBM (LambdaRank 含む) / scikit-learn / PyTorch / TensorFlow / MLflow / Kubeflow / KServe / Vertex AI Pipelines / Vertex AI Feature Store / W&B / Great Expectations / multilingual-e5 / ONNX Runtime |
+| **Data Engineering** | BigQuery / Dataform / Snowflake / Redshift / Airflow / dbt / Athena / Glue / Firehose / Elasticsearch |
 | **Cloud Infrastructure** | GCP (Cloud Run Service/Jobs, Vertex AI, BigQuery, Pub/Sub, Eventarc, Cloud Scheduler, Artifact Registry, Secret Manager, VPC) / AWS (EKS, Lambda, ECS, Fargate, IAM, S3, CloudFront, ALB, Cognito, CodePipeline) / Azure |
 | **IaC & Automation** | Terraform / Ansible / CloudFormation / AWS CDK / Workload Identity Federation |
 | **Container Orchestration** | EKS / Helm / Argo CD / Kustomize / Operator SDK / kubeadm / kind / git-sync |
@@ -107,10 +109,11 @@
 GCP ベースの MLOps パイプラインにおける学習・サービング・監視・再学習ループの強化と、オフライン評価基盤の構築をチームリーダーとして推進。
 
 - Cloud Run / Vertex AI を中心とした学習・推論基盤の改善
+- BigQuery / Vertex AI Feature Store を前提とした特徴量管理・再学習パイプラインの設計検証
 - Terraform による IaC 整備とデプロイフローの改善
 - PagerDuty 連携を含む監視・アラート基盤の設計
 
-**主要技術**: GCP / Python / Terraform / Cloud Run / Vertex AI / PagerDuty
+**主要技術**: GCP / Python / Terraform / Cloud Run / Vertex AI / Vertex AI Feature Store / BigQuery / PagerDuty
 
 ---
 
