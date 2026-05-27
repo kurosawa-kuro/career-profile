@@ -195,3 +195,6 @@ Solidity + Scala + iOS/Android 連携のウォレット基盤をテックリー�
 
 - Zine Interview : <https://zine.qiita.com/interview/interview_udemy_20170906/>
 - Udemy Data Science : <https://zine.qiita.com/products/udemy-datascience/>
+
+<img width="1739" height="755" alt="image" src="https://github.com/user-attachments/assets/1d7e9216-4b3d-4b4f-a9ae-348755a896d9" />
+
